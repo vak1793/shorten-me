@@ -1,0 +1,12 @@
+#root {
+  box-sizing: content-box;
+  background-color: darkgrey;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  background-color: white;
+  align-content: center;
+  padding: 50px;
+}
