@@ -4,7 +4,7 @@ import $ from 'jquery';
 class List extends Component {
   constructor(props) {
     super(props);
-debugger;
+
     this.state = {
       items: '',
       rootUrl: props.rootUrl,
