@@ -4,10 +4,10 @@ import $ from 'jquery';
 class List extends Component {
   constructor(props) {
     super(props);
-
+debugger;
     this.state = {
       items: '',
-      path: props.path,
+      rootUrl: props.rootUrl,
       longkey: props.longkey,
       shortkey: props.shortkey,
     }
@@ -18,12 +18,8 @@ class List extends Component {
   componentDidMount() {
     $.ajax({
       method: 'GET',
-      url: this.state.path,
-      success: ((response) => {
-
-        this.setState({items: response})
-        console.log(this.state)
-      }),
+      url: `${this.state.rootUrl}/links`,
+      success: ((response) => { this.setState({items: response}) }),
       error: ((response) => { console.log(response) })
     })
   }
@@ -38,7 +34,6 @@ class List extends Component {
       rows.push(<tr key={i}><td>{short}</td><td>{long}</td></tr>)
     }
 
-    // var op = <ul id="shortened-url-list"> {list} </ul>;
     return (
       <div id="results-table">
         <table>

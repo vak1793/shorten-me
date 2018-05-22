@@ -6,7 +6,7 @@ class Upload extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rootUrl: "http://short.ly:3001",
+      rootUrl: props.rootUrl,
       created: []
     }
 
@@ -65,9 +65,6 @@ class Upload extends Component {
   }
 
   render() {
-    var params = {
-
-    }
     return(
       <div>
         <ReactFileReader handleFiles={this.handleFile} fileTypes={'.csv'}>

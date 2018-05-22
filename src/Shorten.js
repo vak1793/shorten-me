@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import $ from 'jquery';
 import Form from './Form';
 import List from './List';
 import Upload from './Upload';
@@ -10,14 +9,14 @@ class Shorten extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rootUrl: "http://short.ly:3001",
+      rootUrl: props.rootUrl,
       listData: []
     }
   }
 
   render() {
     var params = {
-      path: `${this.state.rootUrl}/links`,
+      rootUrl: this.state.rootUrl,
       longkey: 'long_url',
       shortkey: 'short_url'
     };
@@ -35,13 +34,13 @@ class Shorten extends Component {
             </TabList>
           </div>
           <TabPanel>
-            <Form />
+            <Form {...params}/>
           </TabPanel>
           <TabPanel>
             <List {...params}/>
           </TabPanel>
           <TabPanel>
-            <Upload />
+            <Upload {...params}/>
           </TabPanel>
         </Tabs>
       </div>

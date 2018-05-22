@@ -7,7 +7,7 @@ class Form extends Component {
     this.state = {
       value: '',
       justCreated: [],
-      rootUrl: "http://short.ly:3001"
+      rootUrl: props.rootUrl
     };
 
     this.handleChange = this.handleChange.bind(this);

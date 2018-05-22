@@ -5,5 +5,6 @@ import './Shorten.less';
 import Shorten from './Shorten';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Shorten />, document.getElementById('root'));
+var startProps = { rootUrl: "http://short.ly" }
+ReactDOM.render(<Shorten {...startProps} />, document.getElementById('root'));
 registerServiceWorker();

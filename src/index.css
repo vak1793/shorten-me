@@ -95,7 +95,7 @@ input[type=submit], #upload-button {
 }
 
 .react-tabs__tab--selected {
-  background: #fff;
+  background: lightgray;
   border-color: #aaa;
   color: black;
   border-radius: 5px 5px 0 0;
