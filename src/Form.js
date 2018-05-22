@@ -7,7 +7,7 @@ class Form extends Component {
     this.state = {
       value: '',
       justCreated: [],
-      rootUrl: "http://localhost:3001"
+      rootUrl: "http://short.ly:3001"
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -31,7 +31,7 @@ class Form extends Component {
               'short': response
             },
             ...prevState.justCreated
-          ],
+          ].slice(0,10),
           value: '',
         }))
       }),
@@ -45,9 +45,9 @@ class Form extends Component {
     var items = this.state.justCreated;
     for(var i = 0; i < items.length; i++) {
       var long = items[i]['long'];
-      var short = <a href={items[i]['short']}> {items[i]['short']} </a>;
+      var short = <a href={items[i]['short']} target='_blank'> {items[i]['short']} </a>;
 
-      list.push(<li key={i}>{long} -> {short}</li>);
+      list.push(<li className="result-item" key={i}>{long} -> {short}</li>);
     }
     var op = <ul id="shortened-url" visibility={this.state.justCreated.length > 1 ? 'visible' : undefined}> {list} </ul>;
     return op;
@@ -56,11 +56,13 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter URL" />
-          <input type="submit" />
+        <form id="shorten-form" onSubmit={this.handleSubmit}>
+          <input id="shorten-input" type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter URL" />
+          <input id="shorten-submit" type="submit" />
         </form>
-        { this.createList() }
+        <div id="results">
+          { this.createList() }
+        </div>
       </div>
     );
   }

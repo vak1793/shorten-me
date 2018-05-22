@@ -2,4 +2,138 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: lightgray;
+  overflow: hidden;
+}
+
+/* #root {
+  background-color: black;
+  position: relative;
+  height: 1500px;
+} */
+
+.main {
+	box-sizing: content-box;
+  background-color: white;
+  border-radius: 1px;
+  box-shadow: 1px 1px 1px 1px;
+  align-content: center;
+	margin: 12% auto;
+	width: 50%;
+  height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.result-item {
+  margin: 5px 0 0 0;
+}
+
+#shorten-form {
+  align-content: center;
+  margin: 0 0 0 30%;
+	width: 50%;
+}
+
+#shorten-input {
+  display: block;
+  float: left;
+}
+
+#shorten-submit {
+  margin-left: 5px;
+  display: block;
+  float: left;
+}
+
+#shortened-url {
+  display: block;
+  float: left;
+}
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], #upload-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#upload-button {
+  display: block;
+  float: left;
+  position: relative;
+  left: 42%;
+  top: 20%;
+}
+
+#tab-container {
+  background-color: white;
+  position: relative;
+  display: block;
+  float: left;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.react-tabs__tab-panel {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.react-tabs__tab--selected {
+  background: #fff;
+  border-color: #aaa;
+  color: black;
+  border-radius: 5px 5px 0 0;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid #aaa;
+  z-index: 50;
+  width: 100%;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+#results-table {
+  margin: 0 10px 0 10px;
+  max-height: 300px;
+  overflow: scroll;
+}
+
+tr {
+  margin: 2px 2px 2px 2px;
+}
+
+.react-file-reader {
+  height: 75px;
+}
+
+#upload-results {
+  align-content: center;
+  max-height: 240px;
+  overflow-y: scroll;
 }
